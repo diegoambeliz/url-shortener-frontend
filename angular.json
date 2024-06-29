@@ -34,7 +34,8 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "node_modules/@ng-vibe/dialog/styles/styles.css"
+              "node_modules/@ng-vibe/dialog/styles/styles.css",
+              "node_modules/@ng-vibe/toastify/styles/styles.css"
             ],
             "scripts": []
           },

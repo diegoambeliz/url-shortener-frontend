@@ -1,5 +1,5 @@
 <nav class="flex flex-wrap lg:flex-nowrap justify-between items-center p-3">
-    <h2 class="text-xl lg:w-fit w-1/2 font-bold">Url Shortener</h2>
+    <h2 class="text-xl lg:w-fit w-1/2 font-bold cursor-pointer" [routerLink]="['/']">Url Shortener</h2>
     <button #menuBtn (click)="changeMenu()" class="w-1/2 text-right block lg:hidden"><i class="bi bi-list text-3xl"></i></button>
     <div *ngIf="!isMobile(menuBtn) || (isMobile(menuBtn) && showMenu)" class="w-full lg:w-auto bg-white border border-gray-200 rounded-md lg:border-none lg:rounded-none p-3 flex flex-col lg:bg-transparent lg:p-0 lg:block">
         @if(!isLogged)
