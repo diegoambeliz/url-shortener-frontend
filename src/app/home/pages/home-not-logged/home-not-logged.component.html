@@ -1,0 +1,14 @@
+<app-main-navbar></app-main-navbar>
+
+<div class="flex flex-col justify-center items-center w-full h-96 p-2">
+    <h2 class="text-6xl w-fit font-bold text-center">Url Shortener</h2>
+
+
+    <form class="mt-10">
+        <div class="flex items-center bg-white py-1 px-1 w-auto lg:w-[500px] rounded-full border-2 border-gray-300">
+            <i class="bi bi-copy mx-3 text-gray-400"></i>
+            <input class="outline-none w-full" type="text" placeholder="Enter the link here">
+            <button [routerLink]="['/signin']" class="bg-purple-600 hover:bg-purple-700 text-white p-2 w-44 rounded-full">Send</button>
+        </div>
+    </form>
+</div>

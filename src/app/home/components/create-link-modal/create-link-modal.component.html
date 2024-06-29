@@ -1,0 +1,21 @@
+<div class="px-3 py-2">
+    <div class="flex w-full justify-end items-center">
+        <button (click)="closeDialog()" class="text-gray-400 text-lg hover:text-gray-600"><i class="bi bi-x"></i></button>
+    </div>
+    <form #f="ngForm" (ngSubmit)="createLink(f)">
+        @if(originalLink)
+        {
+        <label class="text-gray-400 my-2 block">Your Link: <a href="{{originalLink}}" target="_blank" class="font-bold">{{originalLink}}</a></label>
+        }
+        <div class="border rounded-md p-3 w-full bg-white flex">
+            <input [disabled]="shortLink != null" ngModel class="outline-none w-full" required id="description" name="description" type="text" placeholder="Set a description for your link">
+            <button [disabled]="f.invalid || shortLink != null" type="submit" class="bg-purple-600 hover:bg-purple-700 disabled:bg-purple-300 text-white p-2 w-20 rounded-md"><i class="bi bi-floppy"></i></button>
+        </div>
+    </form>
+
+    <div class="w-full flex justify-center items-center h-24 bg-white border border-gray-200 rounded-md mt-2">
+        @if( shortLink){
+        <h2 class="text-2xl text-center" title="Copy to clipboard" (click)="copyToClipboard()">Your link is <a href="{{url}}{{shortLink}}" target="_blank" class="text-red-600 hover:underline">{{url}}{{shortLink}}</a> <button class="text-gray-300 mx-3 hover:text-gray-400 text-xl"><i class="bi bi-clipboard"></i></button></h2>
+        }
+    </div>
+</div>

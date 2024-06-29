@@ -1,0 +1,15 @@
+<app-main-navbar></app-main-navbar>
+
+<div class="w-full h-screen flex justify-center items-center">
+    <div class="p-10 flex flex-col items-center pt-10 bg-white h-[600px] w-[500px] rounded-3xl border border-gray-100">
+        <h2 class="font-bold text-xl mb-5 text-center"><span class="text-6xl">404</span> <br> Page Not Found</h2>
+        
+        <div>
+            <p>Oops! It looks like the page you're looking for doesn't exist. 😔</p>
+            <p class="mt-5">Don't worry, you can head back to our home page or explore other sections of our site.</p>
+            <p class="mt-5">If you think this is a mistake, please let us know!</p>
+        </div>
+
+        <button [routerLink]="['/']" class="mt-14 bg-purple-500 text-white rounded-md w-80 p-3 disabled:bg-purple-300 hover:bg-purple-600">Go to home</button>
+    </div>
+</div>

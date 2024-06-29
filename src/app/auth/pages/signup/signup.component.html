@@ -1,0 +1,37 @@
+<app-main-navbar></app-main-navbar>
+
+<div class="w-full h-screen flex justify-center items-center">
+    <form class="flex flex-col items-center pt-10 bg-white h-[600px] w-[500px] rounded-3xl border border-gray-100"
+        #f="ngForm" (ngSubmit)="signUp(f)">
+
+        <h2 class="text-2xl font-bold mb-10">Sign Up</h2>
+
+        <div class="border rounded-md p-3 w-80">
+            <input class="outline-none" required #username="ngModel" [(ngModel)]="obj.username" name="username" type="text"
+                placeholder="Username">
+        </div>
+
+        <div class="mt-5 flex justify-between w-80 gap-1">
+            <div class="border rounded-md p-3 w-40">
+                <input class="outline-none w-fit" required #first_name="ngModel" [(ngModel)]="obj.first_name" name="first_name" type="text"
+                placeholder="First Name">
+            </div>
+    
+            <div class="border rounded-md p-3 w-40">
+                <input class="outline-none" required #last_name="ngModel" [(ngModel)]="obj.last_name" name="last_name" type="text"
+                placeholder="Last Name">
+            </div>
+        </div>
+
+        <div class="border rounded-md p-3 w-80 mt-5">
+            <input class="outline-none" required #email="ngModel" [(ngModel)]="obj.email" name="email" type="email" placeholder="Email">
+        </div>
+        
+        <div class="border rounded-md p-3 w-80 mt-5">
+            <input class="outline-none" required #pwd="ngModel" [(ngModel)]="obj.pwd" name="pwd" type="password" placeholder="Password">
+        </div>
+
+        <button class="mt-5 bg-purple-500 text-white rounded-md w-80 p-3 disabled:bg-purple-300 hover:bg-purple-600" role="submit" [disabled]="f.invalid">Sign Up</button>
+
+    </form>
+</div>

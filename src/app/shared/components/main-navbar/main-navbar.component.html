@@ -1,0 +1,15 @@
+<nav class="flex flex-wrap lg:flex-nowrap justify-between items-center p-3">
+    <h2 class="text-xl lg:w-fit w-1/2 font-bold">Url Shortener</h2>
+    <button #menuBtn (click)="changeMenu()" class="w-1/2 text-right block lg:hidden"><i class="bi bi-list text-3xl"></i></button>
+    <div *ngIf="!isMobile(menuBtn) || (isMobile(menuBtn) && showMenu)" class="w-full lg:w-auto bg-white border border-gray-200 rounded-md lg:border-none lg:rounded-none p-3 flex flex-col lg:bg-transparent lg:p-0 lg:block">
+        @if(!isLogged)
+        {
+            <button class="text-left py-3 px-2 lg:text-center lg:bg-gray-200 lg:hover:bg-gray-300 lg:text-gray-400 lg:mx-2 lg:p-2 lg:w-28 lg:rounded-full" [routerLink]="['/signin']">Sign In <i class="bi bi-box-arrow-in-left mx-1 hidden lg:inline-block"></i> </button>
+            <button class="text-left py-3 px-2 lg:text-center lg:bg-purple-600 lg:hover:bg-purple-700 lg:text-white lg:p-2 lg:w-44 lg:rounded-full" [routerLink]="['/signup']">Sign Up</button>
+        }
+        @else {
+            <button class="text-left py-3 px-2 lg:text-center lg:bg-gray-200 lg:hover:bg-gray-300 lg:text-gray-400 lg:mx-2 lg:p-2 lg:w-28 lg:rounded-full" (click)="signOut()">Sign Out<i class="bi bi-box-arrow-in-left mx-1"></i> </button>
+        }
+        
+    </div>
+</nav>

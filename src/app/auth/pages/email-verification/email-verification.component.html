@@ -1,0 +1,20 @@
+<app-main-navbar></app-main-navbar>
+
+<div class="w-full h-screen flex justify-center items-center">
+    <div class="p-10 flex flex-col items-center pt-10 bg-white h-[600px] w-[500px] rounded-3xl border border-gray-100">
+        <h2 class="font-bold text-xl mb-5">Email Verification</h2>
+        
+        <div>
+            <p>Welcome aboard! 🎉</p>
+            <p class="mt-5">We just sent a verification email to the address you provided. Please check your inbox and
+                click the link to verify your account.</p>
+            <p class="mt-5">Can't find the email? No worries! It might be hanging out in your spam or junk folder. If
+                it's still playing hide and seek, you can request another one on our website.</p>
+            <p class="mt-5">Thanks for joining us!</p>
+            <p class="mt-5">Cheers,</p>
+            <p class="mt-5">Url Shortener</p>
+        </div>
+
+        <button [routerLink]="['/']" class="mt-5 bg-purple-500 text-white rounded-md w-80 p-3 disabled:bg-purple-300 hover:bg-purple-600">Go to home</button>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<table class="table-auto border-collapse bg-white w-[800px]">
+    <thead>
+        <tr>
+            <th class="text-left text-gray-400 p-3 bg-gray-50">Description</th>
+            <th class="text-left text-gray-400 p-3 bg-gray-50">Original Link</th>
+            <th class="text-left text-gray-400 p-3 bg-gray-50">Short Link</th>
+            <th class="text-left text-gray-400 p-3 bg-gray-50">Clicks</th>
+            <th class="text-left text-gray-400 p-3 bg-gray-50">Created At</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (link of links; track link.id) {
+            <tr class="border-gray-200 border-t">
+                <td class="min-w-64 p-3">{{link.description}}</td>
+                <td class="p-3"><a class="block w-64 text-purple-400 hover:text-purple-600 truncate" target="_blank" href="{{link.link}}">{{link.link}}</a></td>
+                <td class="min-w-64 p-3"><a class="text-purple-400 hover:text-purple-600" target="_blank" href="{{url}}{{link.shortLink}}">{{url}}{{link.shortLink}}</a></td>
+                <td class="min-w-64 p-3">{{link.viewsCount}}</td>
+                <td class="min-w-64 p-3 text-gray-400"><i class="bi bi-clock mx-1"></i> {{link.createdAt | date: 'MM/dd/yyyy'}}</td>
+                <td class="min-w-20 p-3 text-gray-400">
+                    <button (click)="deleteLink.emit(link.id)" class="text-xl text-gray-400 hover:text-red-500"><i class="bi bi-x"></i></button>
+                </td>
+            </tr>
+        }@empty {
+            <tr>
+                <td colspan="5" class="text-center text-gray-300 p-3">You have not yet created any link</td>
+            </tr>
+        }
+    </tbody>
+</table>

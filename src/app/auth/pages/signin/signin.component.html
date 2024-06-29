@@ -1,0 +1,18 @@
+<app-main-navbar></app-main-navbar>
+
+<div class="w-full h-screen flex justify-center items-center">
+    <form #f="ngForm" class="flex flex-col items-center pt-20 bg-white h-[600px] w-[500px] rounded-3xl border border-gray-100" (ngSubmit)="signIn(f)">
+
+        <h2 class="text-2xl font-bold mb-10">Sign In</h2>
+
+        <div class="border rounded-md p-3 w-64">
+            <input class="outline-none" required id="username" #username="ngModel" [(ngModel)]="obj.username" name="username" type="text" placeholder="Username">
+        </div>
+        <div class="border rounded-md p-3 w-64 mt-5">
+            <input class="outline-none" required #pwd="ngModel" [(ngModel)]="obj.pwd" name="pwd" type="password" placeholder="Password">
+        </div>
+
+        <button class="mt-5 bg-purple-500 text-white rounded-md w-64 p-3 disabled:bg-purple-300 hover:bg-purple-600" role="submit" [disabled]="f.invalid">Sign In</button>
+    
+    </form>
+</div>
